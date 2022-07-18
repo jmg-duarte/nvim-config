@@ -1,6 +1,10 @@
+-- Resources
+-- * https://www.youtube.com/watch?v=-esgEOqwzVg
+-- * https://equk.co.uk/2021/09/15/converting-neovim-config-to-lua
+-- * https://benfrain.com/refactor-your-neovim-init-lua-single-file-to-modules-with-packer/
+
 -- force vim to use utf-8 as file encoding
 vim.opt.fileencoding = "utf-8"
-vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.confirm = true -- confirm exiting
 vim.opt.hlsearch = true
