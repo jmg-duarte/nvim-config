@@ -11,4 +11,3 @@ vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_ui_contrast = 'high'
 vim.g.gruvbox_material_statusline_style = 'original'
 vim.cmd('colorscheme gruvbox-material')
-

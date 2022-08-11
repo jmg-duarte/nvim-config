@@ -5,7 +5,8 @@
 
 -- force vim to use utf-8 as file encoding
 vim.opt.fileencoding = "utf-8"
-vim.opt.relativenumber = true
+vim.opt.number = true
+-- vim.opt.relativenumber = true
 vim.opt.confirm = true -- confirm exiting
 vim.opt.hlsearch = true
 vim.opt.tabstop = 4
@@ -42,14 +43,14 @@ require('plugins')
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
--- autocmd to set ocaml indent to 2
-vim.api.nvim_exec([[autocmd FileType ocaml setlocal shiftwidth=2 softtabstop=2 expandtab]], false)
+-- set indent levels
+vim.api.nvim_exec([[autocmd FileType ocaml      setlocal shiftwidth=2 softtabstop=2 expandtab]], false)
+vim.api.nvim_exec([[autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab]], false)
+vim.api.nvim_exec([[autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab]], false)
 
 -- autocmd to delete trailling whitespace
 vim.api.nvim_exec([[autocmd BufWritePre * :%s/\s\+$//e]], false)
 
--- autocmd to set ocaml indent to 2
-vim.api.nvim_exec([[autocmd FileType ocaml setlocal shiftwidth=2 softtabstop=2 expandtab]], false)
 vim.api.nvim_exec([[autocmd CursorHold * silent call CocActionAsync('highlight')]], false)
 vim.api.nvim_exec([[autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()]], false)
 
@@ -58,8 +59,6 @@ local map = vim.api.nvim_set_keymap
 -- Misc
 -- Using curly-brackets on mac is awful
 -- https://vi.stackexchange.com/a/21425
-map('n', '[', '{', {})
-map('n', ']', '}', {})
 map('n', '<leader>nt', ':tabnext<CR>', {noremap = true})
 map('n', '<leader>pt', ':tabprevious<CR>', {noremap = true})
 map('n', '<leader>|', ':vsplit<CR>', {noremap = true})
@@ -67,9 +66,9 @@ map('n', '<leader>-', ':split<CR>', {noremap = true})
 
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<cr>', {noremap = true})
-map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
-map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
-map('n', '<leader>fh', ':Telescope help_tags<CR>', {noremap = true})
+map('n', '<leader>lg', ':Telescope live_grep<CR>', {noremap = true})
+map('n', '<leader>bf', ':Telescope buffers<CR>', {noremap = true})
+map('n', '<leader>ht', ':Telescope help_tags<CR>', {noremap = true})
 
 -- Coc Settings
 -- Show Documentation with K
