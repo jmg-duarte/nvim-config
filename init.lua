@@ -6,7 +6,7 @@
 -- force vim to use utf-8 as file encoding
 vim.opt.fileencoding = "utf-8"
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.confirm = true -- confirm exiting
 vim.opt.hlsearch = true
 vim.opt.tabstop = 4
@@ -45,6 +45,20 @@ vim.opt.sidescroll=1 " The minimal number of columns to scroll horizontally.
 require('plugins')
 
 -- syntax coloring
+vim.opt.background = "dark"
+
+if vim.opt.termguicolors then
+    vim.opt.termguicolors = true
+end
+
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_better_performance = 1
+vim.g.gruvbox_material_foreground = 'original'
+vim.g.gruvbox_material_enable_italic = 1
+vim.g.gruvbox_material_ui_contrast = 'high'
+vim.g.gruvbox_material_statusline_style = 'original'
+vim.cmd('colorscheme gruvbox-material')
+
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 

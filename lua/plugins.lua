@@ -4,7 +4,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
@@ -46,7 +45,8 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
-            require('nvim-treesitter.install').update({ with_sync = true })
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
         end,
         config = function()
             require('nvim-treesitter.configs').setup {
