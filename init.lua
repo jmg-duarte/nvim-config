@@ -37,10 +37,10 @@ vim.cmd [[
     augroup end
 ]]
 
-" Vertical/Horizontal scroll off settings
-vim.opt.scrolloff=5 " Minimal number of screen lines to keep above and below the cursor.
-vim.opt.sidescrolloff=10 " Minimal number of screen columns to keep to the left and right of the cursor.
-vim.opt.sidescroll=1 " The minimal number of columns to scroll horizontally.
+-- Vertical/Horizontal scroll off settings
+vim.opt.scrolloff=5 -- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.sidescrolloff=10 -- Minimal number of screen columns to keep to the left and right of the cursor.
+vim.opt.sidescroll=1 -- The minimal number of columns to scroll horizontally.
 
 require('plugins')
 
